@@ -2,17 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83d8bb64-a173-48db-a7de-274cf382e163" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/utils/RandomUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/domains/PatientTodo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/TaskService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/dao/TaskDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/dao/TaskDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/impl/TaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/impl/TaskServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/service/impl/TaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/service/impl/TaskServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/service/impl/TodoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/service/impl/TodoServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/resources/liquibase.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/liquibase.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/todolist/api/dao/TaskDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/org/openmrs/module/todolist/api/dao/TaskDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/maven-java-formatter-cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/maven-java-formatter-cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/todolist-api-1.0.0-SNAPSHOT-tests.jar" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/todolist-api-1.0.0-SNAPSHOT-tests.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/todolist-api-1.0.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/todolist-api-1.0.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/resource/TaskResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/resource/TaskResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/resource/TodoResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/resource/TodoResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/todolist/web/resource/TaskResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/classes/org/openmrs/module/todolist/web/resource/TaskResource.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/omod/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/omod/target/maven-java-formatter-cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/maven-java-formatter-cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/omod/target/surefire-reports/TEST-org.openmrs.module.todolist.AdminListExtensionTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/surefire-reports/TEST-org.openmrs.module.todolist.AdminListExtensionTest.xml" afterDir="false" />
@@ -21,6 +25,7 @@
       <change beforePath="$PROJECT_DIR$/omod/target/todolist-1.0.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/todolist-1.0.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/omod/target/todolist-1.0.0-SNAPSHOT.omod" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/todolist-1.0.0-SNAPSHOT.omod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/omod/target/todolist-1.0.0-SNAPSHOT/lib/todolist-api-1.0.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/todolist-1.0.0-SNAPSHOT/lib/todolist-api-1.0.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/omod/target/todolist-1.0.0-SNAPSHOT/org/openmrs/module/todolist/web/resource/TaskResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/omod/target/todolist-1.0.0-SNAPSHOT/org/openmrs/module/todolist/web/resource/TaskResource.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/api/target/" />
@@ -36,87 +41,88 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/domains/Task.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="851">
-              <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1867#1868#0" expanded="true" />
-                <element signature="e#1954#1955#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/TaskService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="32" column="19" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/resource/TaskResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1311">
-              <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
-              <folding>
-                <element signature="e#2082#2083#0" expanded="true" />
-                <element signature="e#2127#2128#0" expanded="true" />
-                <element signature="e#2382#2383#0" expanded="true" />
-                <element signature="e#2406#2407#0" expanded="true" />
-                <element signature="e#2450#2451#0" expanded="true" />
-                <element signature="e#2464#2465#0" expanded="true" />
-                <element signature="e#4282#4283#0" expanded="true" />
-                <element signature="e#4323#4324#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/dao/TaskDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="43" column="4" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1138#1139#0" expanded="true" />
-                <element signature="e#1166#1167#0" expanded="true" />
-                <element signature="e#1232#1233#0" expanded="true" />
-                <element signature="e#1275#1276#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/impl/TaskServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/domains/Task.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="851">
+                  <caret line="49" selection-start-line="49" selection-end-line="49" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#1867#1868#0" expanded="true" />
+                    <element signature="e#1954#1955#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/api/src/main/resources/liquibase.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="48">
+                  <caret line="64" column="18" lean-forward="true" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/resource/TaskResource.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="851">
+                  <caret line="69" column="13" lean-forward="true" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+                  <folding>
+                    <element signature="e#3674#3675#0" expanded="true" />
+                    <element signature="e#3715#3716#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/domains/PatientTodo.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="483">
+                  <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#432#433#0" expanded="true" />
+                    <element signature="e#453#454#0" expanded="true" />
+                    <element signature="e#504#505#0" expanded="true" />
+                    <element signature="e#528#529#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/domains/Task.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="851">
+                  <caret line="49" selection-start-line="49" selection-end-line="49" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#1867#1868#0" expanded="true" />
+                    <element signature="e#1954#1955#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -141,26 +147,32 @@
         <option value="$PROJECT_DIR$/omod/src/main/resources/config.xml" />
         <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/controller/TaskController.java" />
         <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/controller/TodolistController.java" />
-        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/dao/TodoDao.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/dao/impl/TodoDao.java" />
-        <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/controller/TodoController.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/service/TodoService.java" />
-        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/service/impl/TodoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/resource/TodoResource.java" />
-        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/domains/Todo.java" />
         <option value="$PROJECT_DIR$/omod/src/main/resources/webModuleApplicationContext.xml" />
         <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/dao/TodoRepository.java" />
         <option value="$PROJECT_DIR$/api/src/test/java/org/openmrs/module/todolist/api/dao/TaskDaoTest.java" />
         <option value="$PROJECT_DIR$/api/src/test/java/org/openmrs/module/todolist/api/TaskServiceTest.java" />
-        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/service/impl/TaskServiceImpl.java" />
-        <option value="$PROJECT_DIR$/api/src/main/resources/moduleApplicationContext.xml" />
         <option value="$PROJECT_DIR$/api/pom.xml" />
         <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/domains/Task.java" />
-        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/dao/TaskDao.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/domains/Todo.java" />
+        <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/controller/TodoController.java" />
+        <option value="$PROJECT_DIR$/api/src/main/resources/moduleApplicationContext.xml" />
+        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/utils/UUIDGenerator.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/TodoService.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/impl/TodoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/dao/TodoDao.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/TaskService.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/impl/TaskServiceImpl.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/service/TaskService.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/dao/TaskDao.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/utils/RandomUtil.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/service/impl/TodoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/resource/TodoResource.java" />
         <option value="$PROJECT_DIR$/api/src/main/resources/liquibase.xml" />
         <option value="$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/resource/TaskResource.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/service/impl/TaskServiceImpl.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/domains/PatientTodo.java" />
       </list>
     </option>
   </component>
@@ -176,7 +188,9 @@
     <option name="width" value="947" />
     <option name="height" value="1050" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -234,6 +248,51 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="todolist" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="todolist" type="b2602c69:ProjectViewProjectNode" />
+              <item name="todolist" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="todolist" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="todolist" type="b2602c69:ProjectViewProjectNode" />
+              <item name="todolist" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="todolist" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="todolist" type="b2602c69:ProjectViewProjectNode" />
+              <item name="todolist" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="todolist" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="todolist" type="b2602c69:ProjectViewProjectNode" />
+              <item name="todolist" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="todolist" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="todolist" type="b2602c69:ProjectViewProjectNode" />
@@ -369,7 +428,34 @@
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28997868" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.21908316" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.329718" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.79175705" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.329718" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28997868" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -394,7 +480,7 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/Item.java" />
@@ -430,15 +516,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/resources/messages_es.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="ResourceBundle" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/src/main/resources/messages_fr.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="ResourceBundle" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/resources/messages.properties">
       <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="ResourceBundle" />
     </entry>
@@ -473,14 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/config/TodolistConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/resource/TodoResource.java" />
     <entry file="file://$PROJECT_DIR$/omod/src/test/java/org/openmrs/module/todolist/AdminListExtensionTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -488,35 +558,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/controller/TodoController.java" />
-    <entry file="file://$PROJECT_DIR$/omod/src/main/resources/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1198">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/omod/src/main/resources/webModuleApplicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/service/impl/TodoServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/service/TodoService.java" />
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/domains/Todo.java" />
     <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/dao/TodoRepository.java" />
     <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/dao/impl/TodoDao.java" />
     <entry file="file://$PROJECT_DIR$/api/src/test/java/org/openmrs/module/todolist/api/TaskServiceTest.java" />
     <entry file="file://$PROJECT_DIR$/api/src/test/java/org/openmrs/module/todolist/api/dao/TaskDaoTest.java" />
-    <entry file="file://$PROJECT_DIR$/api/src/main/resources/moduleApplicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/controller/TodolistController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -528,29 +573,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/controller/TaskController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#498#499#0" expanded="true" />
-            <element signature="e#549#550#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/openmrs/hibernate/hibernate-core/3.6.5.Final-mod/hibernate-core-3.6.5.Final-mod.jar!/org/hibernate/Criteria.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/TodolistActivator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -561,41 +587,199 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/dao/TaskDao.java">
+    <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/controller/TaskController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="43" column="4" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+        <state relative-caret-position="230">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1138#1139#0" expanded="true" />
-            <element signature="e#1166#1167#0" expanded="true" />
-            <element signature="e#1232#1233#0" expanded="true" />
-            <element signature="e#1275#1276#0" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
+            <element signature="e#549#550#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/impl/TaskServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/controller/TodoController.java" />
+    <entry file="file://$PROJECT_DIR$/api/src/main/resources/messages_es.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/resources/messages.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omod/src/main/resources/webModuleApplicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+        <state relative-caret-position="253">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omod/src/main/resources/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-37">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/config/TodolistConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/utils/UUIDGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/domains/Todo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#433#434#0" expanded="true" />
+            <element signature="e#484#485#0" expanded="true" />
+            <element signature="e#508#509#0" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
+            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#622#623#0" expanded="true" />
+            <element signature="e#658#659#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+            <element signature="e#772#773#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/dao/TaskDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1163#1164#0" expanded="true" />
+            <element signature="e#1191#1192#0" expanded="true" />
+            <element signature="e#1259#1260#0" expanded="true" />
+            <element signature="e#1302#1303#0" expanded="true" />
+            <element signature="e#1974#1975#0" expanded="true" />
+            <element signature="e#2028#2029#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/service/TodoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/resources/moduleApplicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/utils/RandomUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/src/main/resources/liquibase.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="44" column="57" lean-forward="true" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
+        <state relative-caret-position="48">
+          <caret line="64" column="18" lean-forward="true" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/service/impl/TodoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#947#948#0" expanded="true" />
+            <element signature="e#968#969#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/dao/TodoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/TodolistActivator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/resource/TodoResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="86" column="40" lean-forward="true" selection-start-line="86" selection-start-column="40" selection-end-line="86" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/resource/TaskResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="851">
+          <caret line="69" column="13" lean-forward="true" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+          <folding>
+            <element signature="e#3674#3675#0" expanded="true" />
+            <element signature="e#3715#3716#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/service/impl/TaskServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="49" column="34" lean-forward="true" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1241#1242#0" expanded="true" />
+            <element signature="e#1262#1263#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/service/TaskService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/domains/Task.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="851">
-          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1867#1868#0" expanded="true" />
@@ -604,29 +788,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/api/TaskService.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.0.Final/hibernate-jpa-2.0-api-1.0.0.Final.jar!/javax/persistence/ManyToOne.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="32" column="19" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="184">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/omod/src/main/java/org/openmrs/module/todolist/web/resource/TaskResource.java">
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/org/openmrs/module/todolist/domains/PatientTodo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1311">
-          <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
+        <state relative-caret-position="483">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
           <folding>
-            <element signature="e#2082#2083#0" expanded="true" />
-            <element signature="e#2127#2128#0" expanded="true" />
-            <element signature="e#2382#2383#0" expanded="true" />
-            <element signature="e#2406#2407#0" expanded="true" />
-            <element signature="e#2450#2451#0" expanded="true" />
-            <element signature="e#2464#2465#0" expanded="true" />
-            <element signature="e#4282#4283#0" expanded="true" />
-            <element signature="e#4323#4324#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#432#433#0" expanded="true" />
+            <element signature="e#453#454#0" expanded="true" />
+            <element signature="e#504#505#0" expanded="true" />
+            <element signature="e#528#529#0" expanded="true" />
           </folding>
         </state>
       </provider>

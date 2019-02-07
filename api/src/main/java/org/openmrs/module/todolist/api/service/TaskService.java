@@ -7,7 +7,7 @@
  * Copyright (C) OpenMRS Inc. OpenMRS is a registered trademark and the OpenMRS
  * graphic logo is a trademark of OpenMRS Inc.
  */
-package org.openmrs.module.todolist.api;
+package org.openmrs.module.todolist.api.service;
 
 import org.openmrs.annotation.Authorized;
 import org.openmrs.api.APIException;
@@ -22,7 +22,7 @@ public interface TaskService extends OpenmrsService {
 	
 	@Authorized()
 	@Transactional(readOnly = true)
-	Task getTaskByuuid(String uuid) throws APIException;
+	Task getTaskById(Integer id) throws APIException;
 	
 	@Authorized(TodolistConfig.MODULE_PRIVILEGE)
 	@Transactional
@@ -34,5 +34,8 @@ public interface TaskService extends OpenmrsService {
 	
 	@Transactional
 	List<Task> getAllTasks() throws APIException;
+	
+	@Transactional
+	void voidTask(Task task, String voidReason) throws APIException;
 	
 }

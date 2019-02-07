@@ -3,7 +3,7 @@
  * v. 2.0. If a copy of the MPL was not distributed with this file, You can
  * obtain one at http://mozilla.org/MPL/2.0/. OpenMRS is also distributed under
  * the terms of the Healthcare Disclaimer located at http://openmrs.org/license.
- *
+ * <p>
  * Copyright (C) OpenMRS Inc. OpenMRS is a registered trademark and the OpenMRS
  * graphic logo is a trademark of OpenMRS Inc.
  */
@@ -38,25 +38,29 @@ public class TaskDao {
 	}
 	
 	public Task saveTask(Task task) {
-		sessionFactory.getCurrentSession().save(task);
+		sessionFactory.getCurrentSession().saveOrUpdate(task);
 		return task;
 	}
-	
+
 	public Task UpdateTask(Task task) {
-		sessionFactory.getCurrentSession().saveOrUpdate(task);
+		sessionFactory.getCurrentSession().update(task);
 		return task;
 	}
 	
 	public List<Task> getAllTasks() {
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Task.class);
-		criteria.addOrder(Order.asc("name"));
+		criteria.addOrder(Order.asc("id"));
 		
 		return criteria.list();
 	}
 	
-	public Task getTaskByUuid(String uuid) {
+	public Task getTaskById(Integer id) {
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Task.class);
-		criteria.add(Restrictions.eq("uuid", uuid.toLowerCase()));
+		criteria.add(Restrictions.eq("id", id));
 		return (Task) criteria.uniqueResult();
+	}
+	
+	public void deleteTask(Task task) {
+		sessionFactory.getCurrentSession().delete(task);
 	}
 }

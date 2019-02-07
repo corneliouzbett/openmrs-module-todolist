@@ -5,7 +5,7 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
 
-    <changeSet id="todolist-2019-02-05-09-458967" author="corneliouz bett">
+    <changeSet id="2019-02-05-dfdf9-4587873423967" author="corneliouz bett">
         <preConditions onFail="MARK_RAN">
             <not>
                 <tableExists tableName="tasks"/>
@@ -55,6 +55,54 @@
                                  referencedColumnNames="user_id" />
         <addForeignKeyConstraint constraintName="patienttodolist_voided_by_fk"
                                  baseTableName="tasks" baseColumnNames="voided_by" referencedTableName="users"
+                                 referencedColumnNames="user_id" />
+    </changeSet>
+
+    <changeSet id="378437434738sdsddsd4342323" author="corneliouz bett">
+        <preConditions>
+            <not>
+                <tableExists tableName="todos"/>
+            </not>
+        </preConditions>
+        <createTable tableName="todos">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="uuid" type="char(38)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="title" type="varchar(255)"/>
+            <column name="description" type="varchar(255)"/>
+
+            <column name="creator" defaultValueNumeric="0" type="int">
+                <constraints nullable="false" />
+            </column>
+            <column name="date_created" type="DATETIME">
+                <constraints nullable="true"/>
+            </column>
+            <column name="voided" defaultValueBoolean="false" type="BOOLEAN"/>
+            <column name="voided_by" type="int"/>
+            <column name="date_voided" type="DATETIME">
+                <constraints nullable="true"/>
+            </column>
+            <column name="void_reason" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="changed_by" type="int">
+                <constraints nullable="true"/>
+            </column>
+            <column name="date_changed" type="DATETIME"/>
+        </createTable>
+
+
+        <addForeignKeyConstraint constraintName="patienttodo_creator_fk"
+                                 baseTableName="todos" baseColumnNames="creator" referencedTableName="users"
+                                 referencedColumnNames="user_id" />
+        <addForeignKeyConstraint constraintName="patienttodo_changed_by_fk"
+                                 baseTableName="todos" baseColumnNames="changed_by" referencedTableName="users"
+                                 referencedColumnNames="user_id" />
+        <addForeignKeyConstraint constraintName="patienttodo_voided_by_fk"
+                                 baseTableName="todos" baseColumnNames="voided_by" referencedTableName="users"
                                  referencedColumnNames="user_id" />
     </changeSet>
 
