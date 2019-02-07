@@ -26,7 +26,11 @@ public interface TaskService extends OpenmrsService {
 	
 	@Authorized(TodolistConfig.MODULE_PRIVILEGE)
 	@Transactional
-	Task saveTask(Task item) throws APIException;
+	Task saveTask(Task task) throws APIException;
+	
+	@Authorized(TodolistConfig.MODULE_PRIVILEGE)
+	@Transactional
+	Task updateTask(Task task) throws APIException;
 	
 	@Transactional
 	List<Task> getAllTasks() throws APIException;

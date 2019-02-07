@@ -12,7 +12,6 @@ package org.openmrs.module.todolist.api.dao;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.Criteria;
-import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.openmrs.api.db.hibernate.DbSessionFactory;
@@ -38,7 +37,12 @@ public class TaskDao {
 		this.sessionFactory = sessionFactory;
 	}
 	
-	public Task saveItem(Task task) {
+	public Task saveTask(Task task) {
+		sessionFactory.getCurrentSession().save(task);
+		return task;
+	}
+	
+	public Task UpdateTask(Task task) {
 		sessionFactory.getCurrentSession().saveOrUpdate(task);
 		return task;
 	}

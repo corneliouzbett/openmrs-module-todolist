@@ -42,7 +42,7 @@
             <column name="changed_by" type="int">
                 <constraints nullable="true"/>
             </column>
-            <column name="date_changed" type="int"/>
+            <column name="date_changed" type="DATETIME"/>
         </createTable>
         <addForeignKeyConstraint constraintName="patienttodolist_patient_task_fk" baseTableName="tasks"
                                  baseColumnNames="patient_id" referencedTableName="patient"

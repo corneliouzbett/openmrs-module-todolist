@@ -53,7 +53,7 @@ public class TaskResource extends DataDelegatingCrudResource<Task> {
 	
 	@Override
 	public Task save(Task task) {
-		return null;
+		return taskService.saveTask(task);
 	}
 	
 	@Override
@@ -104,12 +104,12 @@ public class TaskResource extends DataDelegatingCrudResource<Task> {
 		return description;
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value = "/all")
+/*	@RequestMapping(method = RequestMethod.GET, value = "/all")
 	@ResponseBody
 	public List<Task> getAllTasks() {
 		log.info("REST TASK ENDPOINT : => " + taskService.getAllTasks());
 		return taskService.getAllTasks();
-	}
+	}*/
 	
 	@Override
 	protected NeedsPaging<Task> doGetAll(RequestContext context) throws ResponseException {
@@ -128,7 +128,7 @@ public class TaskResource extends DataDelegatingCrudResource<Task> {
 	
 	@PropertySetter("creator")
 	public static void setCreator(Task instance, Boolean voided) {
-		instance.setCreator(Context.getAuthenticatedUser());
+		instance.setCreator(Context.getAuthenticatedUser().getCreator());
 		instance.setDateCreated(new Date());
 		
 	}

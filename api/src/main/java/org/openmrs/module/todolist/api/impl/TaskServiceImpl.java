@@ -13,6 +13,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openmrs.api.APIException;
 import org.openmrs.api.PatientService;
+import org.openmrs.api.context.Context;
 import org.openmrs.api.impl.BaseOpenmrsService;
 import org.openmrs.module.todolist.api.TaskService;
 import org.openmrs.module.todolist.api.dao.TaskDao;
@@ -40,22 +41,25 @@ public class TaskServiceImpl extends BaseOpenmrsService implements TaskService {
 	
 	@Override
 	public Task getTaskByuuid(String uuid) throws APIException {
-		log.error("Task by UUID : " + dao.getTaskByUuid(uuid));
+		log.error(dao.getTaskByUuid(uuid));
 		return dao.getTaskByUuid(uuid);
 	}
 	
 	@Override
-	public Task saveTask(Task item) throws APIException {
-		if (item.getPatient() == null) {
-			item.setPatient(patientService.getPatient(1));
-		}
+	public Task saveTask(Task task) throws APIException {
 		
-		return dao.saveItem(item);
+		return dao.saveTask(task);
+	}
+	
+	@Override
+	public Task updateTask(Task task) throws APIException {
+		task.setChangedBy(Context.getAuthenticatedUser().getChangedBy());
+		return dao.UpdateTask(task);
 	}
 	
 	@Override
 	public List<Task> getAllTasks() throws APIException {
-		log.error("All Tasks : " + dao.getAllTasks());
+		log.error(dao.getAllTasks());
 		return dao.getAllTasks();
 	}
 }
