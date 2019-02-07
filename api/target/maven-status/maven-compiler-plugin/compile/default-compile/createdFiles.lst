@@ -1,0 +1,6 @@
+org/openmrs/module/todolist/domains/Task.class
+org/openmrs/module/todolist/api/TaskService.class
+org/openmrs/module/todolist/api/impl/TaskServiceImpl.class
+org/openmrs/module/todolist/TodolistActivator.class
+org/openmrs/module/todolist/config/TodolistConfig.class
+org/openmrs/module/todolist/api/dao/TaskDao.class

@@ -1,0 +1,4 @@
+org/openmrs/module/todolist/web/controller/TodolistController.class
+org/openmrs/module/todolist/web/resource/TaskResource.class
+org/openmrs/module/todolist/web/controller/TaskController.class
+org/openmrs/module/todolist/extension/html/AdminList.class
