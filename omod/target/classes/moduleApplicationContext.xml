@@ -46,6 +46,24 @@
         </property>
     </bean>
 
+    <bean id="todolist.PatientTodoService"
+          class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+        <property name="transactionManager">
+            <ref bean="transactionManager"/>
+        </property>
+        <property name="target">
+            <bean class="org.openmrs.module.todolist.api.service.impl.PatientTodoServieImpl">
+                <property name="dao" ref="todolist.patientTodoDao"/>
+            </bean>
+        </property>
+        <property name="preInterceptors">
+            <ref bean="serviceInterceptors"/>
+        </property>
+        <property name="transactionAttributeSource">
+            <ref bean="transactionAttributeSource"/>
+        </property>
+    </bean>
+
     <bean parent="serviceContext">
         <property name="moduleService">
             <list>
@@ -59,6 +77,14 @@
             <list>
                 <value>org.openmrs.module.todolist.api.service.TodoService</value>
                 <ref bean="todolist.TodoService"/>
+            </list>
+        </property>
+    </bean>
+    <bean parent="serviceContext">
+        <property name="moduleService">
+            <list>
+                <value>org.openmrs.module.todolist.api.service.PatientTodoService</value>
+                <ref bean="todolist.PatientTodoService"/>
             </list>
         </property>
     </bean>

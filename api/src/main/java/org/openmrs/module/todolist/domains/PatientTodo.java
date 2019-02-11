@@ -1,11 +1,9 @@
-/*
 package org.openmrs.module.todolist.domains;
 
 import org.openmrs.BaseOpenmrsData;
 import org.openmrs.Patient;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity(name = "PatientTodo")
 @Table(name = "patienttodos")
@@ -18,10 +16,10 @@ public class PatientTodo extends BaseOpenmrsData {
 	@ManyToOne
 	@JoinColumn(name = "patient_id")
 	private Patient patient;
-
-    @ManyToOne
-    @JoinColumn(name = "id")
-	private List<Todo> todos;
+	
+	@ManyToOne
+	@JoinColumn(name = "id")
+	private Todo todos;
 	
 	@Override
 	public Integer getId() {
@@ -32,30 +30,32 @@ public class PatientTodo extends BaseOpenmrsData {
 	public void setId(Integer integer) {
 		this.Id = integer;
 	}
-
-    public PatientTodo(Integer id) {
-        Id = id;
-    }
-
-    public Patient getPatient() {
-        return patient;
-    }
-
-    public void setPatient(Patient patient) {
-        this.patient = patient;
-    }
-
-    public List<Todo> getTodos() {
-        return todos;
-    }
-
-    public void setTodos(List<Todo> todos) {
-        this.todos = todos;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
+	
+	public PatientTodo() {
+	}
+	
+	public PatientTodo(Integer id) {
+		Id = id;
+	}
+	
+	public Patient getPatient() {
+		return patient;
+	}
+	
+	public void setPatient(Patient patient) {
+		this.patient = patient;
+	}
+	
+	public Todo getTodos() {
+		return todos;
+	}
+	
+	public void setTodos(Todo todos) {
+		this.todos = todos;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return super.equals(obj);
+	}
 }
-*/

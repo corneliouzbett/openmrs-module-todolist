@@ -18,4 +18,10 @@ import org.springframework.stereotype.Component;
 public class TodolistConfig {
 	
 	public final static String MODULE_PRIVILEGE = "Todolist Privilege";
+	
+	public final static String VIEWTASK_PRIVILEGE = "view task Privilege";
+	
+	public final static String DELETETASK_PRIVILEGE = "delete task Privilege";
+	
+	public final static String UPDATETASK_PRIVILLEGE = "update task Privilege";
 }

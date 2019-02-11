@@ -42,12 +42,12 @@ public class TaskServiceImpl extends BaseOpenmrsService implements TaskService {
 	
 	@Override
 	public Task saveTask(Task task) throws APIException {
-        task.setUuid(RandomUtil.unique());
-        if (task.getPatient() == null) {
-            task.setPatient(Context.getPatientService().getPatient(7));
-            task.setCreator(Context.getAuthenticatedUser().getCreator());
-        }
-        return dao.saveTask(task);
+		task.setUuid(RandomUtil.unique());
+		if (task.getPatient() == null) {
+			task.setPatient(Context.getPatientService().getPatient(7));
+			task.setCreator(Context.getAuthenticatedUser().getCreator());
+		}
+		return dao.saveTask(task);
 		
 	}
 	

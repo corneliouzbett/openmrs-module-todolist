@@ -79,7 +79,7 @@ public class TodoResource extends DataDelegatingCrudResource<Todo> {
 		List<Todo> tasks = todoService.getAllTodo();
 		return new NeedsPaging<Todo>(tasks, context);
 	}
-
+	
 	@Override
 	public DelegatingResourceDescription getCreatableProperties() {
 		DelegatingResourceDescription description = new DelegatingResourceDescription();
@@ -87,10 +87,10 @@ public class TodoResource extends DataDelegatingCrudResource<Todo> {
 		description.addProperty("uuid");
 		description.addProperty("title");
 		description.addProperty("description");
-
+		
 		return description;
 	}
-
+	
 	@Override
 	public DelegatingResourceDescription getUpdatableProperties() throws ResourceDoesNotSupportOperationException {
 		return this.getCreatableProperties();

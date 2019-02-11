@@ -106,4 +106,59 @@
                                  referencedColumnNames="user_id" />
     </changeSet>
 
+
+    <changeSet id="89cv34738sdsdghhfhgdsd4342323" author="corneliouz bett">
+        <preConditions>
+            <not>
+                <tableExists tableName="patienttodos"/>
+            </not>
+        </preConditions>
+        <createTable tableName="patienttodos">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="uuid" type="char(38)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="patient_id" type="int(11)"/>
+            <column name="todo" type="int(11)"/>
+
+            <column name="creator" defaultValueNumeric="0" type="int">
+                <constraints nullable="false" />
+            </column>
+            <column name="date_created" type="DATETIME">
+                <constraints nullable="true"/>
+            </column>
+            <column name="voided" defaultValueBoolean="false" type="BOOLEAN"/>
+            <column name="voided_by" type="int"/>
+            <column name="date_voided" type="DATETIME">
+                <constraints nullable="true"/>
+            </column>
+            <column name="void_reason" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="changed_by" type="int">
+                <constraints nullable="true"/>
+            </column>
+            <column name="date_changed" type="DATETIME"/>
+        </createTable>
+
+
+        <addForeignKeyConstraint constraintName="patienttodos_patient_fk"
+                                 baseTableName="patienttodos" baseColumnNames="patient_id" referencedTableName="patient"
+                                 referencedColumnNames="patient_id" />
+        <addForeignKeyConstraint constraintName="patienttodos_todo_fk"
+                                 baseTableName="patienttodos" baseColumnNames="todo" referencedTableName="todos"
+                                 referencedColumnNames="id" />
+        <addForeignKeyConstraint constraintName="patienttodos_creator_fk"
+                                 baseTableName="patienttodos" baseColumnNames="creator" referencedTableName="users"
+                                 referencedColumnNames="user_id" />
+        <addForeignKeyConstraint constraintName="patienttodos_changed_by_fk"
+                                 baseTableName="patienttodos" baseColumnNames="changed_by" referencedTableName="users"
+                                 referencedColumnNames="user_id" />
+        <addForeignKeyConstraint constraintName="patienttodos_voided_by_fk"
+                                 baseTableName="patienttodos" baseColumnNames="voided_by" referencedTableName="users"
+                                 referencedColumnNames="user_id" />
+    </changeSet>
+
 </databaseChangeLog>

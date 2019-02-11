@@ -1,3 +1,4 @@
+org/openmrs/module/todolist/domains/PatientTodo.class
 org/openmrs/module/todolist/api/service/TodoService.class
 org/openmrs/module/todolist/api/utils/UUIDGenerator.class
 org/openmrs/module/todolist/api/dao/TodoDao.class
@@ -6,7 +7,10 @@ org/openmrs/module/todolist/api/dao/TaskDao.class
 org/openmrs/module/todolist/domains/Task.class
 org/openmrs/module/todolist/api/service/impl/TaskServiceImpl.class
 org/openmrs/module/todolist/TodolistActivator.class
+org/openmrs/module/todolist/api/service/impl/PatientTodoServieImpl.class
 org/openmrs/module/todolist/api/utils/RandomUtil.class
 org/openmrs/module/todolist/api/service/impl/TodoServiceImpl.class
+org/openmrs/module/todolist/api/dao/PatientTodoDao.class
 org/openmrs/module/todolist/api/service/TaskService.class
+org/openmrs/module/todolist/api/service/PatientTodoService.class
 org/openmrs/module/todolist/config/TodolistConfig.class
