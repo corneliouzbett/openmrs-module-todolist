@@ -3,7 +3,7 @@
  * v. 2.0. If a copy of the MPL was not distributed with this file, You can
  * obtain one at http://mozilla.org/MPL/2.0/. OpenMRS is also distributed under
  * the terms of the Healthcare Disclaimer located at http://openmrs.org/license.
- *
+ * <p>
  * Copyright (C) OpenMRS Inc. OpenMRS is a registered trademark and the OpenMRS
  * graphic logo is a trademark of OpenMRS Inc.
  */
@@ -12,7 +12,6 @@ package org.openmrs.module.todolist.api.dao;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.Criteria;
-import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.openmrs.api.db.hibernate.DbSessionFactory;
@@ -38,21 +37,30 @@ public class TaskDao {
 		this.sessionFactory = sessionFactory;
 	}
 	
-	public Task saveItem(Task task) {
+	public Task saveTask(Task task) {
 		sessionFactory.getCurrentSession().saveOrUpdate(task);
+		return task;
+	}
+
+	public Task UpdateTask(Task task) {
+		sessionFactory.getCurrentSession().update(task);
 		return task;
 	}
 	
 	public List<Task> getAllTasks() {
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Task.class);
-		criteria.addOrder(Order.asc("name"));
+		criteria.addOrder(Order.asc("id"));
 		
 		return criteria.list();
 	}
 	
-	public Task getTaskByUuid(String uuid) {
+	public Task getTaskById(Integer id) {
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Task.class);
-		criteria.add(Restrictions.eq("uuid", uuid.toLowerCase()));
+		criteria.add(Restrictions.eq("id", id));
 		return (Task) criteria.uniqueResult();
+	}
+	
+	public void deleteTask(Task task) {
+		sessionFactory.getCurrentSession().delete(task);
 	}
 }

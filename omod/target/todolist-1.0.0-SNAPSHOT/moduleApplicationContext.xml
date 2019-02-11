@@ -16,7 +16,7 @@
             <ref bean="transactionManager"/>
         </property>
         <property name="target">
-            <bean class="org.openmrs.module.todolist.api.impl.TaskServiceImpl">
+            <bean class="org.openmrs.module.todolist.api.service.impl.TaskServiceImpl">
                 <property name="dao" ref="todolist.TaskDao"/>
             </bean>
         </property>
@@ -28,13 +28,39 @@
         </property>
     </bean>
 
+    <bean id="todolist.TodoService"
+          class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+        <property name="transactionManager">
+            <ref bean="transactionManager"/>
+        </property>
+        <property name="target">
+            <bean class="org.openmrs.module.todolist.api.service.impl.TodoServiceImpl">
+                <property name="dao" ref="todolist.TodoDao"/>
+            </bean>
+        </property>
+        <property name="preInterceptors">
+            <ref bean="serviceInterceptors"/>
+        </property>
+        <property name="transactionAttributeSource">
+            <ref bean="transactionAttributeSource"/>
+        </property>
+    </bean>
 
     <bean parent="serviceContext">
         <property name="moduleService">
             <list>
-                <value>org.openmrs.module.todolist.api.TaskService</value>
+                <value>org.openmrs.module.todolist.api.service.TaskService</value>
                 <ref bean="todolist.TaskService"/>
             </list>
         </property>
     </bean>
+    <bean parent="serviceContext">
+        <property name="moduleService">
+            <list>
+                <value>org.openmrs.module.todolist.api.service.TodoService</value>
+                <ref bean="todolist.TodoService"/>
+            </list>
+        </property>
+    </bean>
+
 </beans>
