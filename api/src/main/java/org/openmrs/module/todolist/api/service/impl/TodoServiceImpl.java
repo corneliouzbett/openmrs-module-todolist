@@ -40,8 +40,8 @@ public class TodoServiceImpl extends BaseOpenmrsService implements TodoService {
 	
 	@Override
 	public Todo saveTodo(Todo todo) throws APIException {
-
-        todo.setUuid(RandomUtil.unique());
+		
+		todo.setUuid(RandomUtil.unique());
 		
 		return dao.saveTodo(todo);
 	}

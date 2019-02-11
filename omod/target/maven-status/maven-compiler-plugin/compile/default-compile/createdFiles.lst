@@ -1,4 +1,6 @@
+org/openmrs/module/todolist/web/resource/PatientTodoResource.class
 org/openmrs/module/todolist/web/controller/TodolistController.class
+org/openmrs/module/todolist/web/controller/CustomRestController.class
 org/openmrs/module/todolist/web/resource/TaskResource.class
 org/openmrs/module/todolist/web/controller/TaskController.class
 org/openmrs/module/todolist/web/resource/TodoResource.class

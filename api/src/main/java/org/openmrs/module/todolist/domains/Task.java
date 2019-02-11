@@ -44,6 +44,7 @@ public class Task extends BaseOpenmrsData {
 	public Task() {
 	}
 	
+	@Override
 	public Integer getId() {
 		return id;
 	}

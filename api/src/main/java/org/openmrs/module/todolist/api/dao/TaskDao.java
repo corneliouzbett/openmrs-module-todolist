@@ -41,7 +41,7 @@ public class TaskDao {
 		sessionFactory.getCurrentSession().saveOrUpdate(task);
 		return task;
 	}
-
+	
 	public Task UpdateTask(Task task) {
 		sessionFactory.getCurrentSession().update(task);
 		return task;

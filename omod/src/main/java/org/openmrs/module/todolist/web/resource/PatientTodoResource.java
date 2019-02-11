@@ -1,10 +1,10 @@
 package org.openmrs.module.todolist.web.resource;
 
 import org.openmrs.Patient;
-import org.openmrs.Person;
 import org.openmrs.api.context.Context;
-import org.openmrs.module.todolist.api.service.TaskService;
-import org.openmrs.module.todolist.domains.Task;
+import org.openmrs.module.todolist.api.service.PatientTodoService;
+import org.openmrs.module.todolist.domains.PatientTodo;
+import org.openmrs.module.todolist.domains.Todo;
 import org.openmrs.module.webservices.rest.SimpleObject;
 import org.openmrs.module.webservices.rest.web.RequestContext;
 import org.openmrs.module.webservices.rest.web.RestConstants;
@@ -20,38 +20,32 @@ import org.openmrs.module.webservices.rest.web.resource.impl.NeedsPaging;
 import org.openmrs.module.webservices.rest.web.response.ResourceDoesNotSupportOperationException;
 import org.openmrs.module.webservices.rest.web.response.ResponseException;
 
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
 
-@Resource(name = RestConstants.VERSION_1 + "/todolist/task", supportedClass = Task.class, supportedOpenmrsVersions = { "2.0.*, 2.1.*,2.2.*" })
-public class TaskResource extends DataDelegatingCrudResource<Task> {
+@Resource(name = RestConstants.VERSION_1 + "/todolist/patienttodos", supportedClass = PatientTodo.class, supportedOpenmrsVersions = { "2.0.*, 2.1.*,2.2.*" })
+public class PatientTodoResource extends DataDelegatingCrudResource<PatientTodo> {
 	
-	private TaskService taskService = Context.getService(TaskService.class);
+	private PatientTodoService patientTodoService = Context.getService(PatientTodoService.class);
 	
 	@Override
-	public Task getByUniqueId(String id) {
-		return taskService.getTaskById(Integer.parseInt(id));
+	public PatientTodo getByUniqueId(String s) {
+		return patientTodoService.getPatientTodoById(Integer.parseInt(s));
 	}
 	
 	@Override
-	protected void delete(Task task, String s, RequestContext requestContext) throws ResponseException {
-		taskService.voidTask(task, s);
+	protected void delete(PatientTodo patientTodo, String s, RequestContext requestContext) throws ResponseException {
+		
 	}
 	
 	@Override
-	public Task newDelegate() {
-		return new Task();
+	public PatientTodo newDelegate() {
+		return new PatientTodo();
 	}
 	
 	@Override
-	public Task save(Task task) {
-		return taskService.saveTask(task);
-	}
-	
-	@Override
-	public Object retrieve(String uuid, RequestContext context) throws ResponseException {
-		return super.retrieve(uuid, context);
+	public PatientTodo save(PatientTodo patientTodo) {
+		return patientTodoService.savePatientTodo(patientTodo);
 	}
 	
 	@Override
@@ -60,23 +54,18 @@ public class TaskResource extends DataDelegatingCrudResource<Task> {
 	}
 	
 	@Override
-	public SimpleObject getAuditInfo(Task delegate) throws Exception {
+	public SimpleObject getAuditInfo(PatientTodo delegate) throws Exception {
 		return super.getAuditInfo(delegate);
 	}
 	
 	@Override
-	public void purge(Task task, RequestContext requestContext) throws ResponseException {
+	public void purge(PatientTodo patientTodo, RequestContext requestContext) throws ResponseException {
 		throw new ResourceDoesNotSupportOperationException();
 	}
 	
 	@Override
 	public Object update(String uuid, SimpleObject propertiesToUpdate, RequestContext context) throws ResponseException {
 		return super.update(uuid, propertiesToUpdate, context);
-	}
-	
-	@Override
-	protected Method findMethod(String name) {
-		return super.findMethod(name);
 	}
 	
 	@Override
@@ -87,17 +76,13 @@ public class TaskResource extends DataDelegatingCrudResource<Task> {
 			description.addProperty("id");
 			description.addProperty("uuid");
 			description.addProperty("patient", Representation.DEFAULT);
-			description.addProperty("name");
-			description.addProperty("description");
-			description.addProperty("completed");
+			description.addProperty("todos", Representation.DEFAULT);
 			return description;
 		} else if (representation instanceof FullRepresentation) {
 			description.addProperty("id");
 			description.addProperty("uuid");
 			description.addProperty("patient", Representation.FULL);
-			description.addProperty("name");
-			description.addProperty("description");
-			description.addProperty("completed");
+			description.addProperty("todos", Representation.FULL);
 			return description;
 		} else {
 			return null;
@@ -115,9 +100,7 @@ public class TaskResource extends DataDelegatingCrudResource<Task> {
 		DelegatingResourceDescription description = new DelegatingResourceDescription();
 		description.addProperty("id");
 		description.addProperty("patient");
-		description.addProperty("name");
-		description.addProperty("description");
-		description.addProperty("completed");
+		description.addProperty("todos");
 		
 		return description;
 	}
@@ -127,34 +110,19 @@ public class TaskResource extends DataDelegatingCrudResource<Task> {
 		return this.getCreatableProperties();
 	}
 	
-	/*	@RequestMapping(method = RequestMethod.GET, value = "/all")
-		@ResponseBody
-		public List<Task> getAllTodos() {
-			log.info("REST TASK ENDPOINT : => " + taskService.getAllTodos());
-			return taskService.getAllTodos();
-		}*/
-	
 	@Override
-	protected NeedsPaging<Task> doGetAll(RequestContext context) throws ResponseException {
-		List<Task> tasks = taskService.getAllTasks();
-		return new NeedsPaging<Task>(tasks, context);
+	protected NeedsPaging<PatientTodo> doGetAll(RequestContext context) throws ResponseException {
+		List<PatientTodo> tasks = patientTodoService.getAllPatientTodos();
+		return new NeedsPaging<PatientTodo>(tasks, context);
 	}
 	
 	@PropertySetter("patient")
-	public static void setVoided(Task instance, Patient patient) {
+	public void setPatient(PatientTodo instance, Patient patient) {
 		instance.setPatient(patient);
 	}
 	
-	@PropertySetter("person")
-	public static void setVoided(Task instance, Integer person) {
-		instance.getPatient().setPersonId(person);
+	@PropertySetter("todos")
+	public void setTodos(PatientTodo instance, Todo todos) {
+		instance.setTodos(todos);
 	}
-	
-	/*	@PropertySetter("creator")
-		public static void setCreator(Task instance, Boolean voided) {
-			instance.setCreator(Context.getAuthenticatedUser().getCreator());
-			instance.setDateCreated(new Date());
-			
-		}*/
-	
 }

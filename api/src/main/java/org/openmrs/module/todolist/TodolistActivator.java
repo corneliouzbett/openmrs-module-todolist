@@ -24,14 +24,36 @@ public class TodolistActivator extends BaseModuleActivator {
 	 * @see #started()
 	 */
 	public void started() {
-		log.info("Started Todolist");
+		log.info("Started Openmrs module Todolist");
 	}
 	
-	/**
-	 * @see #shutdown()
-	 */
-	public void shutdown() {
-		log.info("Shutdown Todolist");
+	@Override
+	public void contextRefreshed() {
+		super.contextRefreshed();
+		log.info("Openmrs module Context Refreshed");
 	}
 	
+	@Override
+	public void stopped() {
+		super.stopped();
+		log.info("Shutdown Openmrs module Todolist");
+	}
+	
+	@Override
+	public void willRefreshContext() {
+		super.willRefreshContext();
+		log.info("refreshing Openmrs module Todolist");
+	}
+	
+	@Override
+	public void willStart() {
+		super.willStart();
+		log.info("Starting Openmrs module Todolist");
+	}
+	
+	@Override
+	public void willStop() {
+		super.willStop();
+		log.info("Stopping Openmrs module Todolist");
+	}
 }

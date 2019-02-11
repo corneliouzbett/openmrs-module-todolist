@@ -1,13 +1,16 @@
 /home/corneliouzbett/Documents/Ampath/todolist/api/src/main/java/org/openmrs/module/todolist/api/service/TaskService.java
 /home/corneliouzbett/Documents/Ampath/todolist/api/src/main/java/org/openmrs/module/todolist/config/TodolistConfig.java
+/home/corneliouzbett/Documents/Ampath/todolist/api/src/main/java/org/openmrs/module/todolist/api/service/PatientTodoService.java
 /home/corneliouzbett/Documents/Ampath/todolist/api/src/main/java/org/openmrs/module/todolist/api/dao/TaskDao.java
 /home/corneliouzbett/Documents/Ampath/todolist/api/src/main/java/org/openmrs/module/todolist/api/utils/UUIDGenerator.java
 /home/corneliouzbett/Documents/Ampath/todolist/api/src/main/java/org/openmrs/module/todolist/domains/PatientTodo.java
 /home/corneliouzbett/Documents/Ampath/todolist/api/src/main/java/org/openmrs/module/todolist/domains/Task.java
 /home/corneliouzbett/Documents/Ampath/todolist/api/src/main/java/org/openmrs/module/todolist/api/service/impl/TodoServiceImpl.java
 /home/corneliouzbett/Documents/Ampath/todolist/api/src/main/java/org/openmrs/module/todolist/api/service/TodoService.java
+/home/corneliouzbett/Documents/Ampath/todolist/api/src/main/java/org/openmrs/module/todolist/api/dao/PatientTodoDao.java
 /home/corneliouzbett/Documents/Ampath/todolist/api/src/main/java/org/openmrs/module/todolist/domains/Todo.java
 /home/corneliouzbett/Documents/Ampath/todolist/api/src/main/java/org/openmrs/module/todolist/api/dao/TodoDao.java
 /home/corneliouzbett/Documents/Ampath/todolist/api/src/main/java/org/openmrs/module/todolist/TodolistActivator.java
 /home/corneliouzbett/Documents/Ampath/todolist/api/src/main/java/org/openmrs/module/todolist/api/service/impl/TaskServiceImpl.java
 /home/corneliouzbett/Documents/Ampath/todolist/api/src/main/java/org/openmrs/module/todolist/api/utils/RandomUtil.java
+/home/corneliouzbett/Documents/Ampath/todolist/api/src/main/java/org/openmrs/module/todolist/api/service/impl/PatientTodoServieImpl.java
